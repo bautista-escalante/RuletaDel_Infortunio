@@ -1,8 +1,8 @@
 namespace RuletaDel_Infortunio
 {
-    public partial class Form1 : Form
+    public partial class FrmRuleta : Form
     {
-        public Form1()
+        public FrmRuleta()
         {
             InitializeComponent();
         }
