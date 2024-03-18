@@ -6,5 +6,10 @@ namespace RuletaDel_Infortunio
         {
             InitializeComponent();
         }
+
+        private void FrmRuleta_Load_1(object sender, EventArgs e) 
+        {
+        
+        }
     }
 }
