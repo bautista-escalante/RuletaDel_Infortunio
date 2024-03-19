@@ -144,6 +144,7 @@
             Pb3.Size = new Size(70, 70);
             Pb3.TabIndex = 0;
             Pb3.TabStop = false;
+            Pb3.Click += Pb3_Click;
             // 
             // Pb5
             // 
@@ -154,6 +155,7 @@
             Pb5.Size = new Size(70, 70);
             Pb5.TabIndex = 1;
             Pb5.TabStop = false;
+            Pb5.Click += Pb5_Click;
             // 
             // Pb6
             // 
@@ -164,6 +166,7 @@
             Pb6.Size = new Size(70, 70);
             Pb6.TabIndex = 2;
             Pb6.TabStop = false;
+            Pb6.Click += Pb6_Click;
             // 
             // Pb2
             // 
@@ -174,6 +177,7 @@
             Pb2.Size = new Size(70, 70);
             Pb2.TabIndex = 3;
             Pb2.TabStop = false;
+            Pb2.Click += Pb2_Click;
             // 
             // Pb27
             // 
@@ -184,6 +188,7 @@
             Pb27.Size = new Size(70, 70);
             Pb27.TabIndex = 4;
             Pb27.TabStop = false;
+            Pb27.Click += Pb27_Click;
             // 
             // Pb24
             // 
@@ -194,6 +199,7 @@
             Pb24.Size = new Size(70, 70);
             Pb24.TabIndex = 5;
             Pb24.TabStop = false;
+            Pb24.Click += Pb24_Click;
             // 
             // Pb12
             // 
@@ -204,6 +210,7 @@
             Pb12.Size = new Size(70, 70);
             Pb12.TabIndex = 6;
             Pb12.TabStop = false;
+            Pb12.Click += Pb12_Click;
             // 
             // Pb4
             // 
@@ -214,6 +221,7 @@
             Pb4.Size = new Size(70, 70);
             Pb4.TabIndex = 7;
             Pb4.TabStop = false;
+            Pb4.Click += Pb4_Click;
             // 
             // Pb9
             // 
@@ -224,6 +232,7 @@
             Pb9.Size = new Size(70, 70);
             Pb9.TabIndex = 8;
             Pb9.TabStop = false;
+            Pb9.Click += Pb9_Click;
             // 
             // Pb1
             // 
@@ -234,6 +243,7 @@
             Pb1.Size = new Size(70, 70);
             Pb1.TabIndex = 9;
             Pb1.TabStop = false;
+            Pb1.Click += Pb1_Click;
             // 
             // Pb3Fila
             // 
@@ -254,6 +264,7 @@
             Pb36.Size = new Size(70, 70);
             Pb36.TabIndex = 11;
             Pb36.TabStop = false;
+            Pb36.Click += Pb36_Click;
             // 
             // Pb33
             // 
@@ -264,6 +275,7 @@
             Pb33.Size = new Size(70, 70);
             Pb33.TabIndex = 12;
             Pb33.TabStop = false;
+            Pb33.Click += Pb33_Click;
             // 
             // Pb30
             // 
@@ -274,6 +286,7 @@
             Pb30.Size = new Size(70, 70);
             Pb30.TabIndex = 13;
             Pb30.TabStop = false;
+            Pb30.Click += Pb30_Click;
             // 
             // Pb17
             // 
@@ -284,6 +297,7 @@
             Pb17.Size = new Size(70, 70);
             Pb17.TabIndex = 14;
             Pb17.TabStop = false;
+            Pb17.Click += Pb17_Click;
             // 
             // Pb19
             // 
@@ -294,6 +308,7 @@
             Pb19.Size = new Size(70, 70);
             Pb19.TabIndex = 15;
             Pb19.TabStop = false;
+            Pb19.Click += Pb19_Click;
             // 
             // Pb25
             // 
@@ -304,6 +319,7 @@
             Pb25.Size = new Size(70, 70);
             Pb25.TabIndex = 16;
             Pb25.TabStop = false;
+            Pb25.Click += Pb25_Click;
             // 
             // Pb32
             // 
@@ -314,6 +330,7 @@
             Pb32.Size = new Size(70, 70);
             Pb32.TabIndex = 17;
             Pb32.TabStop = false;
+            Pb32.Click += Pb32_Click;
             // 
             // Pb35
             // 
@@ -324,6 +341,7 @@
             Pb35.Size = new Size(70, 70);
             Pb35.TabIndex = 18;
             Pb35.TabStop = false;
+            Pb35.Click += Pb35_Click;
             // 
             // Pb22
             // 
@@ -334,6 +352,7 @@
             Pb22.Size = new Size(70, 70);
             Pb22.TabIndex = 19;
             Pb22.TabStop = false;
+            Pb22.Click += Pb22_Click;
             // 
             // Pb7
             // 
@@ -344,6 +363,7 @@
             Pb7.Size = new Size(70, 70);
             Pb7.TabIndex = 20;
             Pb7.TabStop = false;
+            Pb7.Click += Pb7_Click;
             // 
             // Pb8
             // 
@@ -354,6 +374,7 @@
             Pb8.Size = new Size(70, 70);
             Pb8.TabIndex = 21;
             Pb8.TabStop = false;
+            Pb8.Click += Pb8_Click;
             // 
             // Pb23
             // 
@@ -364,6 +385,7 @@
             Pb23.Size = new Size(70, 70);
             Pb23.TabIndex = 22;
             Pb23.TabStop = false;
+            Pb23.Click += Pb23_Click;
             // 
             // Pb26
             // 
@@ -374,6 +396,7 @@
             Pb26.Size = new Size(70, 70);
             Pb26.TabIndex = 23;
             Pb26.TabStop = false;
+            Pb26.Click += Pb26_Click;
             // 
             // Pb29
             // 
@@ -384,6 +407,7 @@
             Pb29.Size = new Size(70, 70);
             Pb29.TabIndex = 24;
             Pb29.TabStop = false;
+            Pb29.Click += Pb29_Click;
             // 
             // Pb18
             // 
@@ -394,6 +418,7 @@
             Pb18.Size = new Size(70, 70);
             Pb18.TabIndex = 25;
             Pb18.TabStop = false;
+            Pb18.Click += Pb18_Click;
             // 
             // Pb15
             // 
@@ -404,6 +429,7 @@
             Pb15.Size = new Size(70, 70);
             Pb15.TabIndex = 26;
             Pb15.TabStop = false;
+            Pb15.Click += Pb15_Click;
             // 
             // pb21
             // 
@@ -414,6 +440,7 @@
             pb21.Size = new Size(70, 70);
             pb21.TabIndex = 27;
             pb21.TabStop = false;
+            pb21.Click += pb21_Click;
             // 
             // PbRojo
             // 
@@ -434,6 +461,7 @@
             Pb0.Size = new Size(70, 222);
             Pb0.TabIndex = 29;
             Pb0.TabStop = false;
+            Pb0.Click += Pb0_Click;
             // 
             // Pb10
             // 
@@ -444,6 +472,7 @@
             Pb10.Size = new Size(70, 70);
             Pb10.TabIndex = 30;
             Pb10.TabStop = false;
+            Pb10.Click += Pb10_Click;
             // 
             // Pb13
             // 
@@ -454,6 +483,7 @@
             Pb13.Size = new Size(70, 70);
             Pb13.TabIndex = 31;
             Pb13.TabStop = false;
+            Pb13.Click += Pb13_Click;
             // 
             // Pb11
             // 
@@ -464,6 +494,7 @@
             Pb11.Size = new Size(70, 70);
             Pb11.TabIndex = 32;
             Pb11.TabStop = false;
+            Pb11.Click += Pb11_Click;
             // 
             // Pb14
             // 
@@ -474,6 +505,7 @@
             Pb14.Size = new Size(70, 70);
             Pb14.TabIndex = 33;
             Pb14.TabStop = false;
+            Pb14.Click += Pb14_Click;
             // 
             // Pb16
             // 
@@ -484,6 +516,7 @@
             Pb16.Size = new Size(70, 70);
             Pb16.TabIndex = 34;
             Pb16.TabStop = false;
+            Pb16.Click += Pb16_Click;
             // 
             // Pb28
             // 
@@ -494,6 +527,7 @@
             Pb28.Size = new Size(70, 70);
             Pb28.TabIndex = 35;
             Pb28.TabStop = false;
+            Pb28.Click += Pb28_Click;
             // 
             // Pb20
             // 
@@ -504,6 +538,7 @@
             Pb20.Size = new Size(70, 70);
             Pb20.TabIndex = 36;
             Pb20.TabStop = false;
+            Pb20.Click += Pb20_Click;
             // 
             // Pb34
             // 
@@ -514,6 +549,7 @@
             Pb34.Size = new Size(70, 70);
             Pb34.TabIndex = 37;
             Pb34.TabStop = false;
+            Pb34.Click += Pb34_Click;
             // 
             // Pb31
             // 
@@ -524,6 +560,7 @@
             Pb31.Size = new Size(70, 70);
             Pb31.TabIndex = 38;
             Pb31.TabStop = false;
+            Pb31.Click += Pb31_Click;
             // 
             // PbPares
             // 
