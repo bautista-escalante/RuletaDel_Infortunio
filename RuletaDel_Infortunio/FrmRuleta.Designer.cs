@@ -727,6 +727,7 @@
             Controls.Add(Pb5);
             Controls.Add(Pb3);
             Name = "FrmRuleta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "La Ruleta Del Infortunio";
             Load += FrmRuleta_Load_1;
             ((System.ComponentModel.ISupportInitialize)Pb3).EndInit();

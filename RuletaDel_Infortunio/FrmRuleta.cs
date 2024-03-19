@@ -9,7 +9,9 @@ namespace RuletaDel_Infortunio
 
         private void FrmRuleta_Load_1(object sender, EventArgs e) 
         {
-        
+            
         }
+
+        
     }
 }
