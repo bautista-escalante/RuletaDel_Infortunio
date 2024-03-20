@@ -9,6 +9,7 @@ namespace RuletaDel_Infortunio
     {
         private int index;
         internal bool imagenElegida;
+        internal List<Numeros> numeros;
         private System.Windows.Forms.Timer timer;
         private List<Image> imagenesElegidas;
         private List<Image> imagenes;
@@ -182,10 +183,12 @@ namespace RuletaDel_Infortunio
         private void Pb35_Click(object sender, EventArgs e)
         {
             this.AsignarNumero(this.Pb35, 35, "negro");
+            this.EncontrarPicturebox(22);
         }
         private void Pb36_Click(object sender, EventArgs e)
         {
             this.AsignarNumero(this.Pb36, 36, "rojo");
+            this.EncontrarPicturebox(22);
             this.Animar();
         }
         internal void AsignarNumero(PictureBox pb, int numero,string color)
@@ -235,15 +238,15 @@ namespace RuletaDel_Infortunio
             {
                 if (imagenElegida)
                 {
-                    // Cambiar a la imagen "sin elegir"
+                    // Cambiar a la imagen a "sin elegir"
                     this.LimpiarPicturebox();
-                    pictureBoxes[index].Image = this.imagenesElegidas[index];
+                    pictureBoxes[this.index].Image = this.imagenesElegidas[this.index];
                     imagenElegida = false;
                 }
                 else
                 {
-                    // Cambiar a la imagen "elegida"
-                    pictureBoxes[index].Image = this.imagenesElegidas[index];
+                    // Cambiar a la imagen a "elegida"
+                    pictureBoxes[this.index].Image = this.imagenesElegidas[this.index];
                     imagenElegida = true;
 
                 }
@@ -251,11 +254,56 @@ namespace RuletaDel_Infortunio
             }
             else
             {
-                timer.Stop(); // Detener el temporizador cuando todas las imágenes se han mostrado
+                timer.Stop(); 
                 this.LimpiarPicturebox();
             }
         }
         #endregion
 
+        #region encontrar numero
+        // en perifericos this.encontrarPicturebox(generarNumero())
+        private void EncontrarPicturebox(int num)
+        {
+            int numero = this.GenerarNumero([num]);
+            for(int i = 0; i < this.pictureBoxes.Count; i++)
+            {
+                if ($"pb{numero}" == this.pictureBoxes[i].Name.ToString().ToLower())
+                {
+                    pictureBoxes[i].Image = this.imagenesElegidas[i];
+                    break;
+                }
+            }
+            
+        }
+        private int GenerarNumero(List<int> ListaNumeros)
+        {
+            int numero = 0;
+           Random rnd = new Random();
+            while (true)
+            {
+                int numeroAleatorio = rnd.Next(0, 37);
+                if (this.EncontrarNumero(ListaNumeros, numeroAleatorio) == false)
+                {
+                    numero = numeroAleatorio;
+                    break;
+                }
+            }
+                return numero;
+        }
+        private bool EncontrarNumero(List<int> ListaNumeros, int num)
+        {
+            bool encontrado = false;
+
+            for (int i = 0; i < ListaNumeros.Count; i++)
+            {
+                if (num == ListaNumeros[i])
+                {
+                    encontrado = true;
+                    break;
+                }
+            }
+            return encontrado;
+        }
+        #endregion
     }
 }
