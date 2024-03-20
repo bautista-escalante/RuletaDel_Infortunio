@@ -71,8 +71,8 @@
             PbPares = new PictureBox();
             PbNegro = new PictureBox();
             PbImpares = new PictureBox();
-            pictureBox43 = new PictureBox();
-            pictureBox44 = new PictureBox();
+            Pb1raFila = new PictureBox();
+            Pb2daFila = new PictureBox();
             Pb3Docena = new PictureBox();
             Pb2Docena = new PictureBox();
             Pb1Docena = new PictureBox();
@@ -124,8 +124,8 @@
             ((System.ComponentModel.ISupportInitialize)PbPares).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbNegro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbImpares).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox43).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox44).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb1raFila).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Pb2daFila).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb3Docena).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb2Docena).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb1Docena).BeginInit();
@@ -254,6 +254,7 @@
             Pb3Fila.Size = new Size(70, 70);
             Pb3Fila.TabIndex = 10;
             Pb3Fila.TabStop = false;
+            Pb3Fila.Click += Pb3Fila_Click;
             // 
             // Pb36
             // 
@@ -451,6 +452,7 @@
             PbRojo.Size = new Size(221, 70);
             PbRojo.TabIndex = 28;
             PbRojo.TabStop = false;
+            PbRojo.Click += PbRojo_Click;
             // 
             // Pb0
             // 
@@ -571,6 +573,7 @@
             PbPares.Size = new Size(221, 70);
             PbPares.TabIndex = 39;
             PbPares.TabStop = false;
+            PbPares.Click += PbPares_Click;
             // 
             // PbNegro
             // 
@@ -581,6 +584,7 @@
             PbNegro.Size = new Size(221, 70);
             PbNegro.TabIndex = 40;
             PbNegro.TabStop = false;
+            PbNegro.Click += PbNegro_Click;
             // 
             // PbImpares
             // 
@@ -591,26 +595,29 @@
             PbImpares.Size = new Size(221, 70);
             PbImpares.TabIndex = 41;
             PbImpares.TabStop = false;
+            PbImpares.Click += PbImpares_Click;
             // 
-            // pictureBox43
+            // Pb1raFila
             // 
-            pictureBox43.BackColor = Color.White;
-            pictureBox43.Image = (Image)resources.GetObject("pictureBox43.Image");
-            pictureBox43.Location = new Point(1038, 247);
-            pictureBox43.Name = "pictureBox43";
-            pictureBox43.Size = new Size(70, 70);
-            pictureBox43.TabIndex = 42;
-            pictureBox43.TabStop = false;
+            Pb1raFila.BackColor = Color.White;
+            Pb1raFila.Image = (Image)resources.GetObject("Pb1raFila.Image");
+            Pb1raFila.Location = new Point(1038, 247);
+            Pb1raFila.Name = "Pb1raFila";
+            Pb1raFila.Size = new Size(70, 70);
+            Pb1raFila.TabIndex = 42;
+            Pb1raFila.TabStop = false;
+            Pb1raFila.Click += Pb1raFila_Click;
             // 
-            // pictureBox44
+            // Pb2daFila
             // 
-            pictureBox44.BackColor = Color.White;
-            pictureBox44.Image = (Image)resources.GetObject("pictureBox44.Image");
-            pictureBox44.Location = new Point(1038, 171);
-            pictureBox44.Name = "pictureBox44";
-            pictureBox44.Size = new Size(70, 70);
-            pictureBox44.TabIndex = 43;
-            pictureBox44.TabStop = false;
+            Pb2daFila.BackColor = Color.White;
+            Pb2daFila.Image = (Image)resources.GetObject("Pb2daFila.Image");
+            Pb2daFila.Location = new Point(1038, 171);
+            Pb2daFila.Name = "Pb2daFila";
+            Pb2daFila.Size = new Size(70, 70);
+            Pb2daFila.TabIndex = 43;
+            Pb2daFila.TabStop = false;
+            Pb2daFila.Click += Pb2daFila_Click;
             // 
             // Pb3Docena
             // 
@@ -621,6 +628,7 @@
             Pb3Docena.Size = new Size(70, 70);
             Pb3Docena.TabIndex = 44;
             Pb3Docena.TabStop = false;
+            Pb3Docena.Click += Pb3Docena_Click;
             // 
             // Pb2Docena
             // 
@@ -631,6 +639,7 @@
             Pb2Docena.Size = new Size(70, 70);
             Pb2Docena.TabIndex = 45;
             Pb2Docena.TabStop = false;
+            Pb2Docena.Click += Pb2Docena_Click;
             // 
             // Pb1Docena
             // 
@@ -641,6 +650,7 @@
             Pb1Docena.Size = new Size(70, 70);
             Pb1Docena.TabIndex = 46;
             Pb1Docena.TabStop = false;
+            Pb1Docena.Click += Pb1Docena_Click;
             // 
             // pictureBox48
             // 
@@ -719,8 +729,8 @@
             Controls.Add(Pb1Docena);
             Controls.Add(Pb2Docena);
             Controls.Add(Pb3Docena);
-            Controls.Add(pictureBox44);
-            Controls.Add(pictureBox43);
+            Controls.Add(Pb2daFila);
+            Controls.Add(Pb1raFila);
             Controls.Add(PbImpares);
             Controls.Add(PbNegro);
             Controls.Add(PbPares);
@@ -809,8 +819,8 @@
             ((System.ComponentModel.ISupportInitialize)PbPares).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbNegro).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbImpares).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox43).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox44).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb1raFila).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Pb2daFila).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb3Docena).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb2Docena).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb1Docena).EndInit();
@@ -866,8 +876,8 @@
         private PictureBox PbPares;
         private PictureBox PbNegro;
         private PictureBox PbImpares;
-        private PictureBox pictureBox43;
-        private PictureBox pictureBox44;
+        private PictureBox Pb1raFila;
+        private PictureBox Pb2daFila;
         private PictureBox Pb3Docena;
         private PictureBox Pb2Docena;
         private PictureBox Pb1Docena;

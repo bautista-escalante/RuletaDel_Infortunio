@@ -40,7 +40,7 @@ namespace RuletaDel_Infortunio
 
         private void Pb0_Click(object sender, EventArgs e)
         {
-            this.AsignarNumero(this.Pb0,0,"verde");
+            this.AsignarNumero(this.Pb0, 0, "verde");
         }
         private void Pb1_Click(object sender, EventArgs e)
         {
@@ -188,10 +188,8 @@ namespace RuletaDel_Infortunio
         private void Pb36_Click(object sender, EventArgs e)
         {
             this.AsignarNumero(this.Pb36, 36, "rojo");
-            this.EncontrarPicturebox(22);
-            this.Animar();
         }
-        internal void AsignarNumero(PictureBox pb, int numero,string color)
+        internal void AsignarNumero(PictureBox pb, int numero, string color)
         {
             pb.Image = imagenesElegidas[numero];
             Numeros num = new Numeros(color, 37, numero);
@@ -254,7 +252,7 @@ namespace RuletaDel_Infortunio
             }
             else
             {
-                timer.Stop(); 
+                timer.Stop();
                 this.LimpiarPicturebox();
             }
         }
@@ -265,7 +263,7 @@ namespace RuletaDel_Infortunio
         private void EncontrarPicturebox(int num)
         {
             int numero = this.GenerarNumero([num]);
-            for(int i = 0; i < this.pictureBoxes.Count; i++)
+            for (int i = 0; i < this.pictureBoxes.Count; i++)
             {
                 if ($"pb{numero}" == this.pictureBoxes[i].Name.ToString().ToLower())
                 {
@@ -273,12 +271,12 @@ namespace RuletaDel_Infortunio
                     break;
                 }
             }
-            
+
         }
         private int GenerarNumero(List<int> ListaNumeros)
         {
             int numero = 0;
-           Random rnd = new Random();
+            Random rnd = new Random();
             while (true)
             {
                 int numeroAleatorio = rnd.Next(0, 37);
@@ -288,7 +286,7 @@ namespace RuletaDel_Infortunio
                     break;
                 }
             }
-                return numero;
+            return numero;
         }
         private bool EncontrarNumero(List<int> ListaNumeros, int num)
         {
@@ -305,5 +303,59 @@ namespace RuletaDel_Infortunio
             return encontrado;
         }
         #endregion
+
+        #region Eventos perifericos
+        private void PbNegro_Click(object sender, EventArgs e)
+        {
+            Periferia RomboNegro = new Periferia("rombo",48,"negro");
+            this.EncontrarPicturebox(this.GenerarNumero(RomboNegro.ObtenerNumeros()));
+        }
+        private void PbRojo_Click(object sender, EventArgs e)
+        {
+            Periferia Romborojo = new Periferia("rombo", 48, "rojo");
+            this.EncontrarPicturebox(this.GenerarNumero(Romborojo.ObtenerNumeros()));
+        }
+        private void Pb1Docena_Click(object sender, EventArgs e)
+        {
+            Periferia primeraDoc = new Periferia("1ra Docena", 12);
+            this.EncontrarPicturebox(this.GenerarNumero(primeraDoc.ObtenerNumeros()));
+
+        }
+        private void Pb2Docena_Click(object sender, EventArgs e)
+        {
+            Periferia segundaDoc = new Periferia("2sa Docena", 12);
+            this.EncontrarPicturebox(this.GenerarNumero(segundaDoc.ObtenerNumeros()));
+        }
+        private void Pb3Docena_Click(object sender, EventArgs e)
+        {
+            Periferia terceraDoc = new Periferia("3ra Docena", 12);
+            this.EncontrarPicturebox(this.GenerarNumero(terceraDoc.ObtenerNumeros()));
+        }
+        private void PbPares_Click(object sender, EventArgs e)
+        {
+            Periferia pares = new Periferia("pares", 18);
+            this.EncontrarPicturebox(this.GenerarNumero(pares.ObtenerNumeros()));
+        }
+        private void PbImpares_Click(object sender, EventArgs e)
+        {
+            Periferia impares = new Periferia("impares", 18);
+            this.EncontrarPicturebox(this.GenerarNumero(impares.ObtenerNumeros()));
+        }
+        private void Pb1raFila_Click(object sender, EventArgs e)
+        {
+            Periferia primeraFila = new Periferia("1ra fila",12);
+            this.EncontrarPicturebox(this.GenerarNumero(primeraFila.ObtenerNumeros()));
+        }
+        private void Pb2daFila_Click(object sender, EventArgs e)
+        {
+            Periferia terceraFila = new Periferia("2da fila", 12);
+            this.EncontrarPicturebox(this.GenerarNumero(terceraFila.ObtenerNumeros()));
+        }
+        private void Pb3Fila_Click(object sender, EventArgs e)
+        {
+            Periferia terceraFila = new Periferia("3ra fila", 12);
+            this.EncontrarPicturebox(this.GenerarNumero(terceraFila.ObtenerNumeros()));
+        }
     }
+    #endregion
 }
