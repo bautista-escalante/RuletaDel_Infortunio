@@ -76,10 +76,10 @@
             Pb3Docena = new PictureBox();
             Pb2Docena = new PictureBox();
             Pb1Docena = new PictureBox();
-            pictureBox48 = new PictureBox();
-            pictureBox49 = new PictureBox();
-            pictureBox50 = new PictureBox();
-            pictureBox51 = new PictureBox();
+            PbFicha3 = new PictureBox();
+            PbFicha2 = new PictureBox();
+            PbFicha1 = new PictureBox();
+            PbFicha4 = new PictureBox();
             lblTiempo = new Label();
             lblMensaje = new Label();
             ((System.ComponentModel.ISupportInitialize)Pb3).BeginInit();
@@ -129,10 +129,10 @@
             ((System.ComponentModel.ISupportInitialize)Pb3Docena).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb2Docena).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb1Docena).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox48).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox49).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox50).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox51).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha4).BeginInit();
             SuspendLayout();
             // 
             // Pb3
@@ -652,45 +652,49 @@
             Pb1Docena.TabStop = false;
             Pb1Docena.Click += Pb1Docena_Click;
             // 
-            // pictureBox48
+            // PbFicha3
             // 
-            pictureBox48.BackColor = Color.White;
-            pictureBox48.Image = (Image)resources.GetObject("pictureBox48.Image");
-            pictureBox48.Location = new Point(216, 424);
-            pictureBox48.Name = "pictureBox48";
-            pictureBox48.Size = new Size(70, 70);
-            pictureBox48.TabIndex = 47;
-            pictureBox48.TabStop = false;
+            PbFicha3.BackColor = Color.White;
+            PbFicha3.Image = (Image)resources.GetObject("PbFicha3.Image");
+            PbFicha3.Location = new Point(216, 424);
+            PbFicha3.Name = "PbFicha3";
+            PbFicha3.Size = new Size(70, 70);
+            PbFicha3.TabIndex = 47;
+            PbFicha3.TabStop = false;
+            PbFicha3.Click += PbFichaVerde_Click;
             // 
-            // pictureBox49
+            // PbFicha2
             // 
-            pictureBox49.BackColor = Color.White;
-            pictureBox49.Image = (Image)resources.GetObject("pictureBox49.Image");
-            pictureBox49.Location = new Point(140, 424);
-            pictureBox49.Name = "pictureBox49";
-            pictureBox49.Size = new Size(70, 70);
-            pictureBox49.TabIndex = 48;
-            pictureBox49.TabStop = false;
+            PbFicha2.BackColor = Color.White;
+            PbFicha2.Image = (Image)resources.GetObject("PbFicha2.Image");
+            PbFicha2.Location = new Point(140, 424);
+            PbFicha2.Name = "PbFicha2";
+            PbFicha2.Size = new Size(70, 70);
+            PbFicha2.TabIndex = 48;
+            PbFicha2.TabStop = false;
+            PbFicha2.Click += PbFichaAzul_Click;
             // 
-            // pictureBox50
+            // PbFicha1
             // 
-            pictureBox50.BackColor = Color.White;
-            pictureBox50.Image = (Image)resources.GetObject("pictureBox50.Image");
-            pictureBox50.Location = new Point(64, 424);
-            pictureBox50.Name = "pictureBox50";
-            pictureBox50.Size = new Size(70, 70);
-            pictureBox50.TabIndex = 49;
-            pictureBox50.TabStop = false;
+            PbFicha1.BackColor = Color.White;
+            PbFicha1.Image = (Image)resources.GetObject("PbFicha1.Image");
+            PbFicha1.Location = new Point(64, 424);
+            PbFicha1.Name = "PbFicha1";
+            PbFicha1.Size = new Size(70, 70);
+            PbFicha1.TabIndex = 49;
+            PbFicha1.TabStop = false;
+            PbFicha1.Click += PbFichaRoja_Click;
             // 
-            // pictureBox51
+            // PbFicha4
             // 
-            pictureBox51.BackColor = Color.White;
-            pictureBox51.Image = (Image)resources.GetObject("pictureBox51.Image");
-            pictureBox51.Location = new Point(292, 424);
-            pictureBox51.Name = "pictureBox51";
-            pictureBox51.Size = new Size(70, 70);
-            pictureBox51.TabIndex = 50;
-            pictureBox51.TabStop = false;
+            PbFicha4.BackColor = Color.White;
+            PbFicha4.Image = (Image)resources.GetObject("PbFicha4.Image");
+            PbFicha4.Location = new Point(292, 424);
+            PbFicha4.Name = "PbFicha4";
+            PbFicha4.Size = new Size(70, 70);
+            PbFicha4.TabIndex = 50;
+            PbFicha4.TabStop = false;
+            PbFicha4.Click += PbFichaVioleta_Click;
             // 
             // lblTiempo
             // 
@@ -722,10 +726,10 @@
             ClientSize = new Size(1125, 514);
             Controls.Add(lblMensaje);
             Controls.Add(lblTiempo);
-            Controls.Add(pictureBox51);
-            Controls.Add(pictureBox50);
-            Controls.Add(pictureBox49);
-            Controls.Add(pictureBox48);
+            Controls.Add(PbFicha4);
+            Controls.Add(PbFicha1);
+            Controls.Add(PbFicha2);
+            Controls.Add(PbFicha3);
             Controls.Add(Pb1Docena);
             Controls.Add(Pb2Docena);
             Controls.Add(Pb3Docena);
@@ -824,10 +828,10 @@
             ((System.ComponentModel.ISupportInitialize)Pb3Docena).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb2Docena).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb1Docena).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox48).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox49).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox50).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox51).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbFicha4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -881,10 +885,10 @@
         private PictureBox Pb3Docena;
         private PictureBox Pb2Docena;
         private PictureBox Pb1Docena;
-        private PictureBox pictureBox48;
-        private PictureBox pictureBox49;
-        private PictureBox pictureBox50;
-        private PictureBox pictureBox51;
+        private PictureBox PbFicha3;
+        private PictureBox PbFicha2;
+        private PictureBox PbFicha1;
+        private PictureBox PbFicha4;
         private Label lblTiempo;
         private Label lblMensaje;
     }

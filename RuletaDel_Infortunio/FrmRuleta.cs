@@ -13,15 +13,20 @@ namespace RuletaDel_Infortunio
         private System.Windows.Forms.Timer timer;
         private List<Image> imagenesElegidas;
         private List<Image> imagenes;
+        private List<Image> fichasElegidas;
+        private List<Image> fichas;
         private List<PictureBox> pictureBoxes;
         public FrmRuleta()
         {
-            this.imagenes = new List<Image>();
-            this.imagenesElegidas = new List<Image>();
-            this.CargarImagenes();
             InitializeComponent();
-            this.pictureBoxes = this.CrearListaPicturebox();
             this.imagenElegida = false;
+            this.fichas = new List<Image>();
+            this.imagenes = new List<Image>();
+            this.fichasElegidas = new List<Image>();
+            this.imagenesElegidas = new List<Image>();
+            this.pictureBoxes = this.CrearListaPicturebox();
+            this.CargarImagenes();
+            this.CargarFichas();
         }
 
         private void FrmRuleta_Load_1(object sender, EventArgs e)
@@ -32,7 +37,7 @@ namespace RuletaDel_Infortunio
         {
             for (int i = 0; i < 37; i++)
             {
-                string ruta = AppDomain.CurrentDomain.BaseDirectory + $"\\numeros_elegidos\\{i}_elegido.png";
+                string ruta = AppDomain.CurrentDomain.BaseDirectory + $"numeros_elegidos\\{i}_elegido.png";
                 this.imagenesElegidas.Add(Image.FromFile(ruta));
             }
         }
@@ -259,7 +264,6 @@ namespace RuletaDel_Infortunio
         #endregion
 
         #region encontrar numero
-        // en perifericos this.encontrarPicturebox(generarNumero())
         private void EncontrarPicturebox(int num)
         {
             int numero = this.GenerarNumero([num]);
@@ -307,8 +311,9 @@ namespace RuletaDel_Infortunio
         #region Eventos perifericos
         private void PbNegro_Click(object sender, EventArgs e)
         {
-            Periferia RomboNegro = new Periferia("rombo",48,"negro");
+            Periferia RomboNegro = new Periferia("rombo", 48, "negro");
             this.EncontrarPicturebox(this.GenerarNumero(RomboNegro.ObtenerNumeros()));
+            //LimpiarPicturebox
         }
         private void PbRojo_Click(object sender, EventArgs e)
         {
@@ -343,7 +348,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb1raFila_Click(object sender, EventArgs e)
         {
-            Periferia primeraFila = new Periferia("1ra fila",12);
+            Periferia primeraFila = new Periferia("1ra fila", 12);
             this.EncontrarPicturebox(this.GenerarNumero(primeraFila.ObtenerNumeros()));
         }
         private void Pb2daFila_Click(object sender, EventArgs e)
@@ -356,6 +361,48 @@ namespace RuletaDel_Infortunio
             Periferia terceraFila = new Periferia("3ra fila", 12);
             this.EncontrarPicturebox(this.GenerarNumero(terceraFila.ObtenerNumeros()));
         }
+        #endregion
+
+        #region cambiar fichas
+        private void PbFichaRoja_Click(object sender, EventArgs e)
+        {
+            this.OrdenarFichas();
+            PbFicha1.Image = this.fichasElegidas[0];
+        }
+        private void PbFichaAzul_Click(object sender, EventArgs e)
+        {
+            this.OrdenarFichas();
+            PbFicha2.Image = this.fichasElegidas[1];
+        }
+        private void PbFichaVerde_Click(object sender, EventArgs e)
+        {
+            this.OrdenarFichas();
+            PbFicha3.Image = this.fichasElegidas[2];
+        }
+        private void PbFichaVioleta_Click(object sender, EventArgs e)
+        {
+            this.OrdenarFichas();
+            PbFicha4.Image = this.fichasElegidas[3];
+        }
+        private void OrdenarFichas()
+        {
+            PbFicha1.Image = this.fichas[0];
+            PbFicha2.Image = this.fichas[1];
+            PbFicha3.Image = this.fichas[2];
+            PbFicha4.Image = this.fichas[3];
+        }
+        private void CargarFichas()
+        {
+            this.fichasElegidas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_roja_elegida.png"));
+            this.fichasElegidas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_azul_elegida.png"));
+            this.fichasElegidas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_verde_elegida.png"));
+            this.fichasElegidas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_violeta_elegida.png"));
+            // no elegidas
+            this.fichas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_roja.png"));
+            this.fichas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_azul.png"));
+            this.fichas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_verde.png"));
+            this.fichas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_violeta.png"));
+        }
+        #endregion
     }
-    #endregion
 }
