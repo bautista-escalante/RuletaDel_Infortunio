@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RuletaDel_Infortunio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15f27bdc3d11fbd942ee0f141e2474d936d2c5a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+39f2731baefa295398ded89b730b4880ffa68fb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("RuletaDel_Infortunio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RuletaDel_Infortunio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

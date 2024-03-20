@@ -1,15 +1,26 @@
+using objetos;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace RuletaDel_Infortunio
 {
     public partial class FrmRuleta : Form
     {
+        private int index;
+        internal bool imagenElegida;
+        private System.Windows.Forms.Timer timer;
+        private List<Image> imagenesElegidas;
         private List<Image> imagenes;
+        private List<PictureBox> pictureBoxes;
         public FrmRuleta()
         {
             this.imagenes = new List<Image>();
+            this.imagenesElegidas = new List<Image>();
             this.CargarImagenes();
             InitializeComponent();
+            this.pictureBoxes = this.CrearListaPicturebox();
+            this.imagenElegida = false;
         }
 
         private void FrmRuleta_Load_1(object sender, EventArgs e)
@@ -18,166 +29,231 @@ namespace RuletaDel_Infortunio
         }
         private void CargarImagenes()
         {
-            for (int i = 0; i <= 37; i++)
+            for (int i = 0; i < 37; i++)
             {
-                string nombreImagen = AppDomain.CurrentDomain.BaseDirectory + $"\\numeros_elegidos\\{i}_marcado.jpg";
-                imagenes.Add(Image.FromFile(nombreImagen));
+                string ruta = AppDomain.CurrentDomain.BaseDirectory + $"\\numeros_elegidos\\{i}_elegido.png";
+                this.imagenesElegidas.Add(Image.FromFile(ruta));
             }
         }
         #region Eventos Picturebox
+
         private void Pb0_Click(object sender, EventArgs e)
         {
-            this.Pb0.Image = imagenes[0];
+            this.AsignarNumero(this.Pb0,0,"verde");
         }
         private void Pb1_Click(object sender, EventArgs e)
         {
-            this.Pb1.Image = imagenes[1];
+            this.AsignarNumero(this.Pb1, 1, "rojo");
         }
-
         private void Pb2_Click(object sender, EventArgs e)
         {
-            this.Pb2.Image = imagenes[2];
+            this.AsignarNumero(this.Pb2, 2, "negro");
         }
-
         private void Pb3_Click(object sender, EventArgs e)
         {
-            this.Pb3.Image = imagenes[3];
+            this.AsignarNumero(this.Pb3, 3, "rojo");
         }
-
         private void Pb4_Click(object sender, EventArgs e)
         {
-            this.Pb4.Image = imagenes[4];
+            this.AsignarNumero(this.Pb4, 4, "negro");
         }
         private void Pb5_Click(object sender, EventArgs e)
         {
-            this.Pb5.Image = imagenes[5];
+            this.AsignarNumero(this.Pb5, 5, "rojo");
         }
         private void Pb6_Click(object sender, EventArgs e)
         {
-            this.Pb6.Image = imagenes[6];
+            this.AsignarNumero(this.Pb6, 6, "negro");
         }
         private void Pb7_Click(object sender, EventArgs e)
         {
-            this.Pb7.Image = imagenes[7];
+            this.AsignarNumero(this.Pb7, 7, "rojo");
         }
 
         private void Pb8_Click(object sender, EventArgs e)
         {
-            this.Pb8.Image = imagenes[8];
+            this.AsignarNumero(this.Pb8, 8, "negro");
         }
         private void Pb9_Click(object sender, EventArgs e)
         {
-            this.Pb9.Image = imagenes[9];
+            this.AsignarNumero(this.Pb9, 9, "rojo");
         }
         private void Pb10_Click(object sender, EventArgs e)
         {
-            this.Pb10.Image = imagenes[10];
+            this.AsignarNumero(this.Pb10, 10, "negro");
         }
         private void Pb11_Click(object sender, EventArgs e)
         {
-            this.Pb11.Image = imagenes[11];
+            this.AsignarNumero(this.Pb11, 11, "negro");
         }
         private void Pb12_Click(object sender, EventArgs e)
         {
-            this.Pb12.Image = imagenes[12];
+            this.AsignarNumero(this.Pb12, 12, "rojo");
         }
         private void Pb13_Click(object sender, EventArgs e)
         {
-            this.Pb13.Image = imagenes[13];
+            this.AsignarNumero(this.Pb13, 13, "negro");
         }
         private void Pb14_Click(object sender, EventArgs e)
         {
-            this.Pb14.Image = imagenes[14];
+            this.AsignarNumero(this.Pb14, 14, "rojo");
         }
         private void Pb15_Click(object sender, EventArgs e)
         {
-            this.Pb15.Image = imagenes[15];
+            this.AsignarNumero(this.Pb15, 15, "negro");
         }
         private void Pb16_Click(object sender, EventArgs e)
         {
-            this.Pb16.Image = imagenes[16];
+            this.AsignarNumero(this.Pb16, 16, "rojo");
         }
         private void Pb17_Click(object sender, EventArgs e)
         {
-            this.Pb17.Image = imagenes[17];
+            this.AsignarNumero(this.Pb17, 17, "negro");
         }
-
         private void Pb18_Click(object sender, EventArgs e)
         {
-            this.Pb18.Image = imagenes[18];
+            this.AsignarNumero(this.Pb18, 18, "rojo");
         }
         private void Pb19_Click(object sender, EventArgs e)
         {
-            this.Pb19.Image = imagenes[19];
+            this.AsignarNumero(this.Pb19, 19, "rojo");
         }
         private void Pb20_Click(object sender, EventArgs e)
         {
-            this.Pb20.Image = imagenes[20];
+            this.AsignarNumero(this.Pb20, 20, "negro");
         }
         private void pb21_Click(object sender, EventArgs e)
         {
-            this.pb21.Image = imagenes[21];
+            this.AsignarNumero(this.pb21, 21, "rojo");
         }
         private void Pb22_Click(object sender, EventArgs e)
         {
-            this.Pb22.Image = imagenes[22];
+            this.AsignarNumero(this.Pb22, 22, "negro");
         }
         private void Pb23_Click(object sender, EventArgs e)
         {
-            this.Pb23.Image = imagenes[23];
+            this.AsignarNumero(this.Pb23, 23, "rojo");
         }
         private void Pb24_Click(object sender, EventArgs e)
         {
-            this.Pb24.Image = imagenes[24];
+            this.AsignarNumero(this.Pb24, 24, "negro");
         }
         private void Pb25_Click(object sender, EventArgs e)
         {
-            this.Pb25.Image = imagenes[25];
+            this.AsignarNumero(this.Pb25, 25, "rojo");
         }
         private void Pb26_Click(object sender, EventArgs e)
         {
-            this.Pb26.Image = imagenes[26];
+            this.AsignarNumero(this.Pb26, 26, "negro");
         }
         private void Pb27_Click(object sender, EventArgs e)
         {
-            this.Pb27.Image = imagenes[27];
+            this.AsignarNumero(this.Pb27, 27, "rojo");
         }
         private void Pb28_Click(object sender, EventArgs e)
         {
-            this.Pb28.Image = imagenes[28];
+            this.AsignarNumero(this.Pb28, 28, "negro");
         }
         private void Pb29_Click(object sender, EventArgs e)
         {
-            this.Pb29.Image = imagenes[29];
+            this.AsignarNumero(this.Pb29, 29, "negro");
         }
         private void Pb30_Click(object sender, EventArgs e)
         {
 
-            this.Pb30.Image = imagenes[30];
+            this.AsignarNumero(this.Pb30, 30, "rojo");
         }
         private void Pb31_Click(object sender, EventArgs e)
         {
-            this.Pb31.Image = imagenes[31];
+            this.AsignarNumero(this.Pb31, 31, "negro");
         }
         private void Pb32_Click(object sender, EventArgs e)
         {
-            this.Pb32.Image = imagenes[32];
+            this.AsignarNumero(this.Pb32, 32, "rojo");
         }
         private void Pb33_Click(object sender, EventArgs e)
         {
-            this.Pb33.Image = imagenes[33];
+            this.AsignarNumero(this.Pb33, 33, "negro");
         }
         private void Pb34_Click(object sender, EventArgs e)
         {
-            this.Pb34.Image = imagenes[34];
+            this.AsignarNumero(this.Pb34, 34, "rojo");
         }
         private void Pb35_Click(object sender, EventArgs e)
         {
-            this.Pb35.Image = imagenes[35];
+            this.AsignarNumero(this.Pb35, 35, "negro");
         }
         private void Pb36_Click(object sender, EventArgs e)
         {
-            this.Pb36.Image = imagenes[36];
+            this.AsignarNumero(this.Pb36, 36, "rojo");
+            this.Animar();
+        }
+        internal void AsignarNumero(PictureBox pb, int numero,string color)
+        {
+            pb.Image = imagenesElegidas[numero];
+            Numeros num = new Numeros(color, 37, numero);
+        }
+        #endregion
+
+        #region animacion
+        internal List<PictureBox> CrearListaPicturebox()
+        {
+            List<PictureBox> lista = new List<PictureBox>();
+            for (int i = 0; i <= 36; i++)
+            {
+                PictureBox pictureBox = (PictureBox)this.Controls.Find("Pb" + i, true)[0];
+                lista.Add(pictureBox);
+            }
+            return lista;
+        }
+        internal void LimpiarPicturebox()
+        {
+            // en todos los picture boxes mostrar los nmeros sin cuadrados verdes
+            for (int i = 0; i < 37; i++)
+            {
+                string ruta = AppDomain.CurrentDomain.BaseDirectory + $"numeros\\{i}.png";
+                imagenes.Add(Image.FromFile(ruta));
+
+            }
+            for (int i = 0; i < this.pictureBoxes.Count; i++)
+            {
+                pictureBoxes[i].Image = this.imagenes[i];
+            }
+        }
+        internal void Animar()
+        {
+            this.timer = new System.Windows.Forms.Timer();
+            this.LimpiarPicturebox();
+            this.index = 0;
+            this.timer.Interval = 60;
+            this.timer.Tick += Timer_Tick;
+            this.timer.Start();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (index < pictureBoxes.Count)
+            {
+                if (imagenElegida)
+                {
+                    // Cambiar a la imagen "sin elegir"
+                    this.LimpiarPicturebox();
+                    pictureBoxes[index].Image = this.imagenesElegidas[index];
+                    imagenElegida = false;
+                }
+                else
+                {
+                    // Cambiar a la imagen "elegida"
+                    pictureBoxes[index].Image = this.imagenesElegidas[index];
+                    imagenElegida = true;
+
+                }
+                index++;
+            }
+            else
+            {
+                timer.Stop(); // Detener el temporizador cuando todas las imágenes se han mostrado
+                this.LimpiarPicturebox();
+            }
         }
         #endregion
 

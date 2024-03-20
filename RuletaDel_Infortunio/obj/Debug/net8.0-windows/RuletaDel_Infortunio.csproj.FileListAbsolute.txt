@@ -16,3 +16,7 @@ C:\RuletaDel_Infortunio\RuletaDel_Infortunio\obj\Debug\net8.0-windows\RuletaDel_
 C:\RuletaDel_Infortunio\RuletaDel_Infortunio\obj\Debug\net8.0-windows\ref\RuletaDel_Infortunio.dll
 C:\RuletaDel_Infortunio\RuletaDel_Infortunio\obj\Debug\net8.0-windows\RuletaDel_Infortunio.sourcelink.json
 C:\RuletaDel_Infortunio\RuletaDel_Infortunio\obj\Debug\net8.0-windows\RuletaDel_Infortunio.Properties.Resources.resources
+C:\RuletaDel_Infortunio\RuletaDel_Infortunio\bin\Debug\net8.0-windows\objetos.dll
+C:\RuletaDel_Infortunio\RuletaDel_Infortunio\bin\Debug\net8.0-windows\objetos.pdb
+C:\RuletaDel_Infortunio\RuletaDel_Infortunio\obj\Debug\net8.0-windows\RuletaDel_Infortunio.csproj.AssemblyReference.cache
+C:\RuletaDel_Infortunio\RuletaDel_Infortunio\obj\Debug\net8.0-windows\RuletaDe.733A15FD.Up2Date

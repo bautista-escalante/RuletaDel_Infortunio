@@ -13,6 +13,18 @@ namespace objetos
         {
             this.numero = numero;
         }
+        public bool EsRojo(int num)
+        {
+            bool retorno = false;
+            for(int i = 0; i < base.rojo.Count; i++)
+            {
+                if (num == i)
+                {
+                    retorno = true;
+                }
+            }
+            return retorno;
+        }
     }
 
 }

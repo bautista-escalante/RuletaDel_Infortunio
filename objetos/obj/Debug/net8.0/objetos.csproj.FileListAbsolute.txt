@@ -1,0 +1,12 @@
+C:\RuletaDel_Infortunio\objetos\bin\Debug\net8.0\objetos.deps.json
+C:\RuletaDel_Infortunio\objetos\bin\Debug\net8.0\objetos.dll
+C:\RuletaDel_Infortunio\objetos\bin\Debug\net8.0\objetos.pdb
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.GeneratedMSBuildEditorConfig.editorconfig
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.AssemblyInfoInputs.cache
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.AssemblyInfo.cs
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.csproj.CoreCompileInputs.cache
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.sourcelink.json
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.dll
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\refint\objetos.dll
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\objetos.pdb
+C:\RuletaDel_Infortunio\objetos\obj\Debug\net8.0\ref\objetos.dll

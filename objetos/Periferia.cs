@@ -8,8 +8,6 @@
         public Periferia(string obj, int valor, string color = null) : base(color, valor)
         {
             this.objeto = obj;
-            this.rojo = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
-            this.negro = [2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35];
         }
         public List<int> ObtenerNumeros()
         {
@@ -19,11 +17,11 @@
                 case "rombo":
                     if(base.color == "rojo")
                     {
-                        retorno = this.rojo;
+                        retorno = base.rojo;
                     }
                     else if(base.color == "negro")
                     {
-                        retorno = this.negro;
+                        retorno = base.negro;
                     }
                     break;
                 case "pares":
