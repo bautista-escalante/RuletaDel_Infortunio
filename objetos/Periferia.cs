@@ -60,21 +60,21 @@
                         {
                             bandera = false;
                             retorno.Add(i);
+                            resultado += 3;
                         }
-                        resultado += 3;
                     }
                     break;
                 case "2da linea":
                     bool flag = true;
-                    int result = 1;
+                    int result = 2;
                     for (int i = 2; i < 37; i++)
                     {
                         if (flag || i == result)
                         {
                             flag = false;
                             retorno.Add(i);
+                            result += 3;
                         }
-                        result += 3;
                     }
                     break;
                 case "3ra linea":

@@ -1,16 +1,25 @@
 using objetos;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RuletaDel_Infortunio
 {
     public partial class FrmRuleta : Form
     {
         private int index;
+        private int numeroSaliente;
+        private int creditos;
+        private int tiempoApuesta;
         internal bool imagenElegida;
+        private int valorFicha;
+        private int valorApuesta;
+        private bool ganador;
         internal List<Numeros> numeros;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer tiempo;
         private List<Image> imagenesElegidas;
         private List<Image> imagenes;
         private List<Image> fichasElegidas;
@@ -19,11 +28,19 @@ namespace RuletaDel_Infortunio
         public FrmRuleta()
         {
             InitializeComponent();
+            this.numeroSaliente = 0;
+            this.valorApuesta = 0;
+            this.valorFicha = 100;
+            this.creditos = 4000;
+            this.tiempoApuesta = 15;
+            this.ganador = false;
             this.imagenElegida = false;
             this.fichas = new List<Image>();
             this.imagenes = new List<Image>();
             this.fichasElegidas = new List<Image>();
             this.imagenesElegidas = new List<Image>();
+            this.timer = new System.Windows.Forms.Timer();
+            this.tiempo = new System.Windows.Forms.Timer();
             this.pictureBoxes = this.CrearListaPicturebox();
             this.CargarImagenes();
             this.CargarFichas();
@@ -31,7 +48,7 @@ namespace RuletaDel_Infortunio
 
         private void FrmRuleta_Load_1(object sender, EventArgs e)
         {
-
+            this.ManejarTiempo();
         }
         private void CargarImagenes()
         {
@@ -188,7 +205,6 @@ namespace RuletaDel_Infortunio
         private void Pb35_Click(object sender, EventArgs e)
         {
             this.AsignarNumero(this.Pb35, 35, "negro");
-            this.EncontrarPicturebox(22);
         }
         private void Pb36_Click(object sender, EventArgs e)
         {
@@ -198,6 +214,18 @@ namespace RuletaDel_Infortunio
         {
             pb.Image = imagenesElegidas[numero];
             Numeros num = new Numeros(color, 37, numero);
+            int numAleatorio = GenerarNumero([numero]);
+            this.valorApuesta = num.valor;
+            if(num.numero == numAleatorio)
+            {
+                this.ganador = true;
+                creditos += this.valorApuesta;
+            }
+            else
+            {
+                this.ganador = false;
+                creditos -= this.valorFicha;
+            }
         }
         #endregion
 
@@ -214,30 +242,25 @@ namespace RuletaDel_Infortunio
         }
         internal void LimpiarPicturebox()
         {
-            // en todos los picture boxes mostrar los nmeros sin cuadrados verdes
             for (int i = 0; i < 37; i++)
             {
                 string ruta = AppDomain.CurrentDomain.BaseDirectory + $"numeros\\{i}.png";
-                imagenes.Add(Image.FromFile(ruta));
+                pictureBoxes[i].Refresh();
+                pictureBoxes[i].Image = Image.FromFile(ruta);
 
-            }
-            for (int i = 0; i < this.pictureBoxes.Count; i++)
-            {
-                pictureBoxes[i].Image = this.imagenes[i];
             }
         }
         internal void Animar()
         {
-            this.timer = new System.Windows.Forms.Timer();
             this.LimpiarPicturebox();
             this.index = 0;
-            this.timer.Interval = 60;
+            this.timer.Interval = 100;
             this.timer.Tick += Timer_Tick;
             this.timer.Start();
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (index < pictureBoxes.Count)
+            if (this.index < pictureBoxes.Count)
             {
                 if (imagenElegida)
                 {
@@ -251,7 +274,6 @@ namespace RuletaDel_Infortunio
                     // Cambiar a la imagen a "elegida"
                     pictureBoxes[this.index].Image = this.imagenesElegidas[this.index];
                     imagenElegida = true;
-
                 }
                 index++;
             }
@@ -259,38 +281,48 @@ namespace RuletaDel_Infortunio
             {
                 timer.Stop();
                 this.LimpiarPicturebox();
+                timer.Stop();
+                int indice = this.EncontrarPicturebox(this.numeroSaliente);
+                pictureBoxes[this.numeroSaliente].Image = this.imagenesElegidas[this.numeroSaliente];
+                if (ganador)
+                {
+                    int ganancia = valorApuesta * valorFicha;
+                    this.creditos += ganancia;
+                    lblMensaje.Text = $"ganaste {ganancia} creditos";
+                }
+                else
+                {
+                    this.creditos -= valorFicha;
+                }
+                LblCreditoDisponibles.Text = $"tienes {this.creditos} creditos";
+                
             }
         }
         #endregion
 
         #region encontrar numero
-        private void EncontrarPicturebox(int num)
+        private int EncontrarPicturebox(int? num)
         {
-            int numero = this.GenerarNumero([num]);
             for (int i = 0; i < this.pictureBoxes.Count; i++)
             {
-                if ($"pb{numero}" == this.pictureBoxes[i].Name.ToString().ToLower())
+                if ($"pb{num}" == this.pictureBoxes[i].Name.ToString().ToLower())
                 {
-                    pictureBoxes[i].Image = this.imagenesElegidas[i];
-                    break;
+                    return i; 
                 }
             }
-
+            return 0;
         }
         private int GenerarNumero(List<int> ListaNumeros)
         {
-            int numero = 0;
             Random rnd = new Random();
             while (true)
             {
                 int numeroAleatorio = rnd.Next(0, 37);
                 if (this.EncontrarNumero(ListaNumeros, numeroAleatorio) == false)
                 {
-                    numero = numeroAleatorio;
-                    break;
+                    return numeroAleatorio;
                 }
             }
-            return numero;
         }
         private bool EncontrarNumero(List<int> ListaNumeros, int num)
         {
@@ -311,56 +343,163 @@ namespace RuletaDel_Infortunio
         #region Eventos perifericos
         private void PbNegro_Click(object sender, EventArgs e)
         {
+            PbNegro.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\rombo_negro_elegido.png");
             Periferia RomboNegro = new Periferia("rombo", 48, "negro");
-            this.EncontrarPicturebox(this.GenerarNumero(RomboNegro.ObtenerNumeros()));
-            //LimpiarPicturebox
+            this.numeroSaliente = this.GenerarNumero(RomboNegro.ObtenerNumeros());
+            if (this.EncontrarNumero(RomboNegro.negro, this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = RomboNegro.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void PbRojo_Click(object sender, EventArgs e)
         {
+            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\rombo_rojo_elegido.png");
             Periferia Romborojo = new Periferia("rombo", 48, "rojo");
-            this.EncontrarPicturebox(this.GenerarNumero(Romborojo.ObtenerNumeros()));
+            this.numeroSaliente = this.GenerarNumero(Romborojo.ObtenerNumeros());
+            if (this.EncontrarNumero(Romborojo.rojo, this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = Romborojo.valor;
+            }
+            else
+            {
+                this.ganador = false;
+                this.valorApuesta = 0;
+            }
         }
         private void Pb1Docena_Click(object sender, EventArgs e)
         {
+            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\1ra_docena_elegida.png");
             Periferia primeraDoc = new Periferia("1ra Docena", 12);
-            this.EncontrarPicturebox(this.GenerarNumero(primeraDoc.ObtenerNumeros()));
-
+            this.numeroSaliente = this.GenerarNumero(primeraDoc.ObtenerNumeros());
+            if (this.EncontrarNumero(primeraDoc.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = primeraDoc.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void Pb2Docena_Click(object sender, EventArgs e)
         {
-            Periferia segundaDoc = new Periferia("2sa Docena", 12);
-            this.EncontrarPicturebox(this.GenerarNumero(segundaDoc.ObtenerNumeros()));
+            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\2da_docena_elegida.png");
+            Periferia segundaDoc = new Periferia("2da Docena", 12);
+            this.numeroSaliente = this.GenerarNumero(segundaDoc.ObtenerNumeros());
+            if (this.EncontrarNumero(segundaDoc.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = segundaDoc.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void Pb3Docena_Click(object sender, EventArgs e)
         {
+            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\3ra_docena_elegida.png");
             Periferia terceraDoc = new Periferia("3ra Docena", 12);
-            this.EncontrarPicturebox(this.GenerarNumero(terceraDoc.ObtenerNumeros()));
+            this.numeroSaliente = this.GenerarNumero(terceraDoc.ObtenerNumeros());
+            if (this.EncontrarNumero(terceraDoc.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = terceraDoc.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void PbPares_Click(object sender, EventArgs e)
         {
             Periferia pares = new Periferia("pares", 18);
-            this.EncontrarPicturebox(this.GenerarNumero(pares.ObtenerNumeros()));
+            this.numeroSaliente = this.GenerarNumero(pares.ObtenerNumeros());
+            if (this.EncontrarNumero(pares.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = pares.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void PbImpares_Click(object sender, EventArgs e)
         {
             Periferia impares = new Periferia("impares", 18);
-            this.EncontrarPicturebox(this.GenerarNumero(impares.ObtenerNumeros()));
+            this.numeroSaliente = this.GenerarNumero(impares.ObtenerNumeros());
+            if (this.EncontrarNumero(impares.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = impares.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void Pb1raFila_Click(object sender, EventArgs e)
         {
-            Periferia primeraFila = new Periferia("1ra fila", 12);
-            this.EncontrarPicturebox(this.GenerarNumero(primeraFila.ObtenerNumeros()));
+            Periferia primeraFila = new Periferia("1ra linea", 12);
+            this.numeroSaliente = this.GenerarNumero(primeraFila.ObtenerNumeros());
+            if (this.EncontrarNumero(primeraFila.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = primeraFila.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void Pb2daFila_Click(object sender, EventArgs e)
         {
-            Periferia terceraFila = new Periferia("2da fila", 12);
-            this.EncontrarPicturebox(this.GenerarNumero(terceraFila.ObtenerNumeros()));
+            Periferia segundaFila = new Periferia("2da linea", 12);
+            this.numeroSaliente = this.GenerarNumero(segundaFila.ObtenerNumeros());
+            if (this.EncontrarNumero(segundaFila.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = segundaFila.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
         private void Pb3Fila_Click(object sender, EventArgs e)
         {
-            Periferia terceraFila = new Periferia("3ra fila", 12);
-            this.EncontrarPicturebox(this.GenerarNumero(terceraFila.ObtenerNumeros()));
+            Periferia terceraFila = new Periferia("3ra linea", 12);
+            this.numeroSaliente = this.GenerarNumero(terceraFila.ObtenerNumeros());
+            if (this.EncontrarNumero(terceraFila.ObtenerNumeros(), this.numeroSaliente))
+            {
+                this.ganador = true;
+                this.valorApuesta = terceraFila.valor;
+            }
+            else
+            {
+                this.valorApuesta = 0;
+                this.ganador = false;
+            }
         }
+        #endregion
+
+        #region limpiar perifericos
+
         #endregion
 
         #region cambiar fichas
@@ -368,21 +507,29 @@ namespace RuletaDel_Infortunio
         {
             this.OrdenarFichas();
             PbFicha1.Image = this.fichasElegidas[0];
+            this.valorFicha = 100;
+            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
         }
         private void PbFichaAzul_Click(object sender, EventArgs e)
         {
             this.OrdenarFichas();
             PbFicha2.Image = this.fichasElegidas[1];
+            this.valorFicha = 200;
+            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
         }
         private void PbFichaVerde_Click(object sender, EventArgs e)
         {
             this.OrdenarFichas();
             PbFicha3.Image = this.fichasElegidas[2];
+            this.valorFicha = 500;
+            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
         }
         private void PbFichaVioleta_Click(object sender, EventArgs e)
         {
             this.OrdenarFichas();
             PbFicha4.Image = this.fichasElegidas[3];
+            this.valorFicha = 1000;
+            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
         }
         private void OrdenarFichas()
         {
@@ -404,5 +551,30 @@ namespace RuletaDel_Infortunio
             this.fichas.Add(Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"fichas\\ficha_violeta.png"));
         }
         #endregion
+
+        #region bucle principal
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            lblTiempo.Text = tiempoApuesta.ToString(); 
+            tiempoApuesta--;
+            if (tiempoApuesta == 0)
+            {
+                tiempo.Stop();
+                this.Animar();
+                this.tiempoApuesta = 15;
+                this.tiempo.Start();
+            }
+        }
+        private void ManejarTiempo() 
+        { 
+            this.tiempo.Interval = 1000;
+            tiempo.Tick += tiempo_Tick;
+            tiempo.Start();
+        }
+        #endregion
+
+
+        // exepcion por creditos insufientes
+
     }
 }

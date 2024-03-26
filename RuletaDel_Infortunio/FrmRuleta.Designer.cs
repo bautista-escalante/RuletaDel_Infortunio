@@ -82,6 +82,8 @@
             PbFicha4 = new PictureBox();
             lblTiempo = new Label();
             lblMensaje = new Label();
+            LblValorFicha = new Label();
+            LblCreditoDisponibles = new Label();
             ((System.ComponentModel.ISupportInitialize)Pb3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb6).BeginInit();
@@ -703,27 +705,51 @@
             lblTiempo.ForeColor = Color.White;
             lblTiempo.Location = new Point(489, 424);
             lblTiempo.Name = "lblTiempo";
-            lblTiempo.Size = new Size(120, 47);
+            lblTiempo.Size = new Size(60, 47);
             lblTiempo.TabIndex = 51;
-            lblTiempo.Text = "label1";
+            lblTiempo.Text = "15";
             // 
             // lblMensaje
             // 
             lblMensaje.AutoSize = true;
             lblMensaje.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMensaje.ForeColor = Color.White;
-            lblMensaje.Location = new Point(64, 373);
+            lblMensaje.Location = new Point(140, 346);
             lblMensaje.Name = "lblMensaje";
-            lblMensaje.Size = new Size(65, 25);
+            lblMensaje.Size = new Size(182, 25);
             lblMensaje.TabIndex = 54;
-            lblMensaje.Text = "label4";
+            lblMensaje.Text = "hagan sus apuestas";
+            // 
+            // LblValorFicha
+            // 
+            LblValorFicha.AutoSize = true;
+            LblValorFicha.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblValorFicha.ForeColor = Color.White;
+            LblValorFicha.Location = new Point(69, 503);
+            LblValorFicha.Name = "LblValorFicha";
+            LblValorFicha.Size = new Size(250, 25);
+            LblValorFicha.TabIndex = 55;
+            LblValorFicha.Text = "valor de ficha: 100 creditos";
+            // 
+            // LblCreditoDisponibles
+            // 
+            LblCreditoDisponibles.AutoSize = true;
+            LblCreditoDisponibles.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblCreditoDisponibles.ForeColor = Color.White;
+            LblCreditoDisponibles.Location = new Point(184, 396);
+            LblCreditoDisponibles.Name = "LblCreditoDisponibles";
+            LblCreditoDisponibles.Size = new Size(178, 25);
+            LblCreditoDisponibles.TabIndex = 56;
+            LblCreditoDisponibles.Text = "tienes 400 creditos";
             // 
             // FrmRuleta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 64, 0);
-            ClientSize = new Size(1125, 514);
+            ClientSize = new Size(1125, 537);
+            Controls.Add(LblCreditoDisponibles);
+            Controls.Add(LblValorFicha);
             Controls.Add(lblMensaje);
             Controls.Add(lblTiempo);
             Controls.Add(PbFicha4);
@@ -891,5 +917,7 @@
         private PictureBox PbFicha4;
         private Label lblTiempo;
         private Label lblMensaje;
+        private Label LblValorFicha;
+        private Label LblCreditoDisponibles;
     }
 }
