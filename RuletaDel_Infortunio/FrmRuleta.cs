@@ -1,9 +1,5 @@
+using exepciones;
 using objetos;
-using System;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-using System.Windows.Forms;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace RuletaDel_Infortunio
 {
@@ -278,6 +274,7 @@ namespace RuletaDel_Infortunio
             }
             else
             {
+                // bucle principal
                 timer.Stop();
                 this.LimpiarPicturebox();
                 this.LimpiarPerifericos();
@@ -297,6 +294,24 @@ namespace RuletaDel_Infortunio
                 LblCreditoDisponibles.Text = $"tienes {this.creditos} creditos";
                 
             }
+        }
+        private void tiempo_Tick(object sender, EventArgs e)
+        {
+            lblTiempo.Text = tiempoApuesta.ToString();
+            tiempoApuesta--;
+            if (tiempoApuesta == 0)
+            {
+                tiempo.Stop();
+                this.Animar();
+                this.tiempoApuesta = 15;
+                this.tiempo.Start();
+            }
+        }
+        private void ManejarTiempo()
+        {
+            this.tiempo.Interval = 1000;
+            tiempo.Tick += tiempo_Tick;
+            tiempo.Start();
         }
         #endregion
 
@@ -515,31 +530,75 @@ namespace RuletaDel_Infortunio
         #region cambiar fichas
         private void PbFichaRoja_Click(object sender, EventArgs e)
         {
-            this.OrdenarFichas();
-            PbFicha1.Image = this.fichasElegidas[0];
-            this.valorFicha = 100;
-            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            try
+            {
+                if(this.creditos < 100)
+                {
+                    throw new FichasInsuficientesExepcion(this.creditos, this.valorFicha);
+                }
+                this.OrdenarFichas();
+                PbFicha1.Image = this.fichasElegidas[0];
+                this.valorFicha = 100;
+                this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            }
+            catch (FichasInsuficientesExepcion ex)
+            {
+                this.LblCreditoDisponibles.Text = ex.Message;
+            }
         }
         private void PbFichaAzul_Click(object sender, EventArgs e)
         {
-            this.OrdenarFichas();
-            PbFicha2.Image = this.fichasElegidas[1];
-            this.valorFicha = 200;
-            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            try
+            {
+                if (this.creditos < 200)
+                {
+                    throw new FichasInsuficientesExepcion(this.creditos, this.valorFicha);
+                }
+                this.OrdenarFichas();
+                PbFicha2.Image = this.fichasElegidas[1];
+                this.valorFicha = 200;
+                this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            }
+            catch (FichasInsuficientesExepcion ex)
+            {
+                this.LblCreditoDisponibles.Text = ex.Message;
+            }
         }
         private void PbFichaVerde_Click(object sender, EventArgs e)
         {
-            this.OrdenarFichas();
-            PbFicha3.Image = this.fichasElegidas[2];
-            this.valorFicha = 500;
-            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            try
+            {
+                if (this.creditos < 500)
+                {
+                    throw new FichasInsuficientesExepcion(this.creditos, this.valorFicha);
+                }
+                this.OrdenarFichas();
+                PbFicha3.Image = this.fichasElegidas[2];
+                this.valorFicha = 500;
+                this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            }
+            catch (FichasInsuficientesExepcion ex)
+            {
+                this.LblCreditoDisponibles.Text = ex.Message;
+            }
         }
         private void PbFichaVioleta_Click(object sender, EventArgs e)
         {
-            this.OrdenarFichas();
-            PbFicha4.Image = this.fichasElegidas[3];
-            this.valorFicha = 1000;
-            this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            try
+            {
+                if (this.creditos < 1000)
+                {
+                    throw new FichasInsuficientesExepcion(this.creditos, this.valorFicha);
+                }
+                this.OrdenarFichas();
+                PbFicha4.Image = this.fichasElegidas[3];
+                this.valorFicha = 1000;
+                this.LblValorFicha.Text = $"valor de ficha: {this.valorFicha}";
+            }
+            catch (FichasInsuficientesExepcion ex)
+            {
+                this.LblCreditoDisponibles.Text = ex.Message;
+            }
         }
         private void OrdenarFichas()
         {
@@ -562,29 +621,14 @@ namespace RuletaDel_Infortunio
         }
         #endregion
 
-        #region bucle principal
-        private void tiempo_Tick(object sender, EventArgs e)
+        public void CancelarApuesta()
         {
-            lblTiempo.Text = tiempoApuesta.ToString(); 
-            tiempoApuesta--;
-            if (tiempoApuesta == 0)
+            this.LimpiarPerifericos();
+            this.LimpiarPicturebox();
+            if(this.creditos < 0)
             {
-                tiempo.Stop();
-                this.Animar();
-                this.tiempoApuesta = 15;
-                this.tiempo.Start();
+                this.creditos = 0;
             }
         }
-        private void ManejarTiempo() 
-        { 
-            this.tiempo.Interval = 1000;
-            tiempo.Tick += tiempo_Tick;
-            tiempo.Start();
-        }
-        #endregion
-
-
-        // exepcion por creditos insufientes
-
     }
 }

@@ -2,6 +2,16 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
+      "exepciones/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/exepciones.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/exepciones.dll": {}
+        }
+      },
       "objetos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -15,6 +25,11 @@
     }
   },
   "libraries": {
+    "exepciones/1.0.0": {
+      "type": "project",
+      "path": "../exepciones/exepciones.csproj",
+      "msbuildProject": "../exepciones/exepciones.csproj"
+    },
     "objetos/1.0.0": {
       "type": "project",
       "path": "../objetos/objetos.csproj",
@@ -23,6 +38,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
+      "exepciones >= 1.0.0",
       "objetos >= 1.0.0"
     ]
   },
@@ -59,6 +75,9 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
+            "C:\\RuletaDel_Infortunio\\exepciones\\exepciones.csproj": {
+              "projectPath": "C:\\RuletaDel_Infortunio\\exepciones\\exepciones.csproj"
+            },
             "C:\\RuletaDel_Infortunio\\objetos\\objetos.csproj": {
               "projectPath": "C:\\RuletaDel_Infortunio\\objetos\\objetos.csproj"
             }
