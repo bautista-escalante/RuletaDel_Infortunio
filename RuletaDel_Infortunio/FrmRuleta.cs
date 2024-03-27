@@ -245,7 +245,6 @@ namespace RuletaDel_Infortunio
             for (int i = 0; i < 37; i++)
             {
                 string ruta = AppDomain.CurrentDomain.BaseDirectory + $"numeros\\{i}.png";
-                pictureBoxes[i].Refresh();
                 pictureBoxes[i].Image = Image.FromFile(ruta);
 
             }
@@ -281,6 +280,7 @@ namespace RuletaDel_Infortunio
             {
                 timer.Stop();
                 this.LimpiarPicturebox();
+                this.LimpiarPerifericos();
                 timer.Stop();
                 int indice = this.EncontrarPicturebox(this.numeroSaliente);
                 pictureBoxes[this.numeroSaliente].Image = this.imagenesElegidas[this.numeroSaliente];
@@ -288,7 +288,7 @@ namespace RuletaDel_Infortunio
                 {
                     int ganancia = valorApuesta * valorFicha;
                     this.creditos += ganancia;
-                    lblMensaje.Text = $"ganaste {ganancia} creditos";
+                    this.LblValorFicha.Text = $"ganaste {ganancia} creditos";
                 }
                 else
                 {
@@ -343,7 +343,7 @@ namespace RuletaDel_Infortunio
         #region Eventos perifericos
         private void PbNegro_Click(object sender, EventArgs e)
         {
-            PbNegro.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\rombo_negro_elegido.png");
+            PbPeriferico4.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\rombo_negro_elegido.png");
             Periferia RomboNegro = new Periferia("rombo", 48, "negro");
             this.numeroSaliente = this.GenerarNumero(RomboNegro.ObtenerNumeros());
             if (this.EncontrarNumero(RomboNegro.negro, this.numeroSaliente))
@@ -359,7 +359,7 @@ namespace RuletaDel_Infortunio
         }
         private void PbRojo_Click(object sender, EventArgs e)
         {
-            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\rombo_rojo_elegido.png");
+            PbPeriferico5.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\rombo_rojo_elegido.png");
             Periferia Romborojo = new Periferia("rombo", 48, "rojo");
             this.numeroSaliente = this.GenerarNumero(Romborojo.ObtenerNumeros());
             if (this.EncontrarNumero(Romborojo.rojo, this.numeroSaliente))
@@ -375,7 +375,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb1Docena_Click(object sender, EventArgs e)
         {
-            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\1ra_docena_elegida.png");
+            PbPeriferico1.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\1ra_docena_elegida.png");
             Periferia primeraDoc = new Periferia("1ra Docena", 12);
             this.numeroSaliente = this.GenerarNumero(primeraDoc.ObtenerNumeros());
             if (this.EncontrarNumero(primeraDoc.ObtenerNumeros(), this.numeroSaliente))
@@ -391,7 +391,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb2Docena_Click(object sender, EventArgs e)
         {
-            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\2da_docena_elegida.png");
+            PbPeriferico2.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\2da_docena_elegida.png");
             Periferia segundaDoc = new Periferia("2da Docena", 12);
             this.numeroSaliente = this.GenerarNumero(segundaDoc.ObtenerNumeros());
             if (this.EncontrarNumero(segundaDoc.ObtenerNumeros(), this.numeroSaliente))
@@ -407,7 +407,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb3Docena_Click(object sender, EventArgs e)
         {
-            PbRojo.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\3ra_docena_elegida.png");
+            PbPeriferico3.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\3ra_docena_elegida.png");
             Periferia terceraDoc = new Periferia("3ra Docena", 12);
             this.numeroSaliente = this.GenerarNumero(terceraDoc.ObtenerNumeros());
             if (this.EncontrarNumero(terceraDoc.ObtenerNumeros(), this.numeroSaliente))
@@ -423,6 +423,8 @@ namespace RuletaDel_Infortunio
         }
         private void PbPares_Click(object sender, EventArgs e)
         {
+
+            PbPeriferico7.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\pares_elegido.png");
             Periferia pares = new Periferia("pares", 18);
             this.numeroSaliente = this.GenerarNumero(pares.ObtenerNumeros());
             if (this.EncontrarNumero(pares.ObtenerNumeros(), this.numeroSaliente))
@@ -438,6 +440,7 @@ namespace RuletaDel_Infortunio
         }
         private void PbImpares_Click(object sender, EventArgs e)
         {
+            PbPeriferico6.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\impares_elegido.png");
             Periferia impares = new Periferia("impares", 18);
             this.numeroSaliente = this.GenerarNumero(impares.ObtenerNumeros());
             if (this.EncontrarNumero(impares.ObtenerNumeros(), this.numeroSaliente))
@@ -453,6 +456,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb1raFila_Click(object sender, EventArgs e)
         {
+            PbPeriferico8.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\1_fila_elegida.png");
             Periferia primeraFila = new Periferia("1ra linea", 12);
             this.numeroSaliente = this.GenerarNumero(primeraFila.ObtenerNumeros());
             if (this.EncontrarNumero(primeraFila.ObtenerNumeros(), this.numeroSaliente))
@@ -468,6 +472,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb2daFila_Click(object sender, EventArgs e)
         {
+            PbPeriferico9.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\2_fila_elegida.png");
             Periferia segundaFila = new Periferia("2da linea", 12);
             this.numeroSaliente = this.GenerarNumero(segundaFila.ObtenerNumeros());
             if (this.EncontrarNumero(segundaFila.ObtenerNumeros(), this.numeroSaliente))
@@ -483,6 +488,7 @@ namespace RuletaDel_Infortunio
         }
         private void Pb3Fila_Click(object sender, EventArgs e)
         {
+            PbPeriferico10.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos_elegidos\\3_fila_elegida.png");
             Periferia terceraFila = new Periferia("3ra linea", 12);
             this.numeroSaliente = this.GenerarNumero(terceraFila.ObtenerNumeros());
             if (this.EncontrarNumero(terceraFila.ObtenerNumeros(), this.numeroSaliente))
@@ -496,10 +502,14 @@ namespace RuletaDel_Infortunio
                 this.ganador = false;
             }
         }
-        #endregion
-
-        #region limpiar perifericos
-
+        public void LimpiarPerifericos()
+        {
+            for(int i = 1; i < 11; i++)
+            {
+                PictureBox pictureBox = (PictureBox)this.Controls.Find($"PbPeriferico{i}", true)[0];
+                pictureBox.Image = Image.FromFile(AppDomain.CurrentDomain.BaseDirectory + $"perifericos\\Periferico_{i}.png");
+            }
+        }
         #endregion
 
         #region cambiar fichas

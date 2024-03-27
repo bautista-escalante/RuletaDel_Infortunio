@@ -39,7 +39,7 @@
             Pb4 = new PictureBox();
             Pb9 = new PictureBox();
             Pb1 = new PictureBox();
-            Pb3Fila = new PictureBox();
+            PbPeriferico10 = new PictureBox();
             Pb36 = new PictureBox();
             Pb33 = new PictureBox();
             Pb30 = new PictureBox();
@@ -57,7 +57,7 @@
             Pb18 = new PictureBox();
             Pb15 = new PictureBox();
             pb21 = new PictureBox();
-            PbRojo = new PictureBox();
+            PbPeriferico5 = new PictureBox();
             Pb0 = new PictureBox();
             Pb10 = new PictureBox();
             Pb13 = new PictureBox();
@@ -68,20 +68,19 @@
             Pb20 = new PictureBox();
             Pb34 = new PictureBox();
             Pb31 = new PictureBox();
-            PbPares = new PictureBox();
-            PbNegro = new PictureBox();
-            PbImpares = new PictureBox();
-            Pb1raFila = new PictureBox();
-            Pb2daFila = new PictureBox();
-            Pb3Docena = new PictureBox();
-            Pb2Docena = new PictureBox();
-            Pb1Docena = new PictureBox();
+            PbPeriferico7 = new PictureBox();
+            PbPeriferico4 = new PictureBox();
+            PbPeriferico6 = new PictureBox();
+            PbPeriferico8 = new PictureBox();
+            PbPeriferico9 = new PictureBox();
+            PbPeriferico3 = new PictureBox();
+            PbPeriferico2 = new PictureBox();
+            PbPeriferico1 = new PictureBox();
             PbFicha3 = new PictureBox();
             PbFicha2 = new PictureBox();
             PbFicha1 = new PictureBox();
             PbFicha4 = new PictureBox();
             lblTiempo = new Label();
-            lblMensaje = new Label();
             LblValorFicha = new Label();
             LblCreditoDisponibles = new Label();
             ((System.ComponentModel.ISupportInitialize)Pb3).BeginInit();
@@ -94,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)Pb4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb3Fila).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb36).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb33).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb30).BeginInit();
@@ -112,7 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)Pb18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb15).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb21).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbRojo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb0).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb13).BeginInit();
@@ -123,14 +122,14 @@
             ((System.ComponentModel.ISupportInitialize)Pb20).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb34).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Pb31).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbPares).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbNegro).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PbImpares).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb1raFila).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb2daFila).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb3Docena).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb2Docena).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)Pb1Docena).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFicha3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFicha2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PbFicha1).BeginInit();
@@ -247,16 +246,16 @@
             Pb1.TabStop = false;
             Pb1.Click += Pb1_Click;
             // 
-            // Pb3Fila
+            // PbPeriferico10
             // 
-            Pb3Fila.BackColor = Color.White;
-            Pb3Fila.Image = (Image)resources.GetObject("Pb3Fila.Image");
-            Pb3Fila.Location = new Point(1038, 95);
-            Pb3Fila.Name = "Pb3Fila";
-            Pb3Fila.Size = new Size(70, 70);
-            Pb3Fila.TabIndex = 10;
-            Pb3Fila.TabStop = false;
-            Pb3Fila.Click += Pb3Fila_Click;
+            PbPeriferico10.BackColor = Color.White;
+            PbPeriferico10.Image = (Image)resources.GetObject("PbPeriferico10.Image");
+            PbPeriferico10.Location = new Point(1038, 95);
+            PbPeriferico10.Name = "PbPeriferico10";
+            PbPeriferico10.Size = new Size(70, 70);
+            PbPeriferico10.TabIndex = 10;
+            PbPeriferico10.TabStop = false;
+            PbPeriferico10.Click += Pb3Fila_Click;
             // 
             // Pb36
             // 
@@ -445,16 +444,16 @@
             pb21.TabStop = false;
             pb21.Click += pb21_Click;
             // 
-            // PbRojo
+            // PbPeriferico5
             // 
-            PbRojo.BackColor = Color.White;
-            PbRojo.Image = (Image)resources.GetObject("PbRojo.Image");
-            PbRojo.Location = new Point(452, 323);
-            PbRojo.Name = "PbRojo";
-            PbRojo.Size = new Size(221, 70);
-            PbRojo.TabIndex = 28;
-            PbRojo.TabStop = false;
-            PbRojo.Click += PbRojo_Click;
+            PbPeriferico5.BackColor = Color.White;
+            PbPeriferico5.Image = (Image)resources.GetObject("PbPeriferico5.Image");
+            PbPeriferico5.Location = new Point(452, 323);
+            PbPeriferico5.Name = "PbPeriferico5";
+            PbPeriferico5.Size = new Size(221, 70);
+            PbPeriferico5.TabIndex = 28;
+            PbPeriferico5.TabStop = false;
+            PbPeriferico5.Click += PbRojo_Click;
             // 
             // Pb0
             // 
@@ -566,93 +565,93 @@
             Pb31.TabStop = false;
             Pb31.Click += Pb31_Click;
             // 
-            // PbPares
+            // PbPeriferico7
             // 
-            PbPares.BackColor = Color.White;
-            PbPares.Image = (Image)resources.GetObject("PbPares.Image");
-            PbPares.Location = new Point(772, 19);
-            PbPares.Name = "PbPares";
-            PbPares.Size = new Size(221, 70);
-            PbPares.TabIndex = 39;
-            PbPares.TabStop = false;
-            PbPares.Click += PbPares_Click;
+            PbPeriferico7.BackColor = Color.White;
+            PbPeriferico7.Image = (Image)resources.GetObject("PbPeriferico7.Image");
+            PbPeriferico7.Location = new Point(772, 19);
+            PbPeriferico7.Name = "PbPeriferico7";
+            PbPeriferico7.Size = new Size(221, 70);
+            PbPeriferico7.TabIndex = 39;
+            PbPeriferico7.TabStop = false;
+            PbPeriferico7.Click += PbPares_Click;
             // 
-            // PbNegro
+            // PbPeriferico4
             // 
-            PbNegro.BackColor = Color.White;
-            PbNegro.Image = (Image)resources.GetObject("PbNegro.Image");
-            PbNegro.Location = new Point(452, 19);
-            PbNegro.Name = "PbNegro";
-            PbNegro.Size = new Size(221, 70);
-            PbNegro.TabIndex = 40;
-            PbNegro.TabStop = false;
-            PbNegro.Click += PbNegro_Click;
+            PbPeriferico4.BackColor = Color.White;
+            PbPeriferico4.Image = (Image)resources.GetObject("PbPeriferico4.Image");
+            PbPeriferico4.Location = new Point(452, 19);
+            PbPeriferico4.Name = "PbPeriferico4";
+            PbPeriferico4.Size = new Size(221, 70);
+            PbPeriferico4.TabIndex = 40;
+            PbPeriferico4.TabStop = false;
+            PbPeriferico4.Click += PbNegro_Click;
             // 
-            // PbImpares
+            // PbPeriferico6
             // 
-            PbImpares.BackColor = Color.White;
-            PbImpares.Image = (Image)resources.GetObject("PbImpares.Image");
-            PbImpares.Location = new Point(772, 323);
-            PbImpares.Name = "PbImpares";
-            PbImpares.Size = new Size(221, 70);
-            PbImpares.TabIndex = 41;
-            PbImpares.TabStop = false;
-            PbImpares.Click += PbImpares_Click;
+            PbPeriferico6.BackColor = Color.White;
+            PbPeriferico6.Image = (Image)resources.GetObject("PbPeriferico6.Image");
+            PbPeriferico6.Location = new Point(772, 323);
+            PbPeriferico6.Name = "PbPeriferico6";
+            PbPeriferico6.Size = new Size(221, 70);
+            PbPeriferico6.TabIndex = 41;
+            PbPeriferico6.TabStop = false;
+            PbPeriferico6.Click += PbImpares_Click;
             // 
-            // Pb1raFila
+            // PbPeriferico8
             // 
-            Pb1raFila.BackColor = Color.White;
-            Pb1raFila.Image = (Image)resources.GetObject("Pb1raFila.Image");
-            Pb1raFila.Location = new Point(1038, 247);
-            Pb1raFila.Name = "Pb1raFila";
-            Pb1raFila.Size = new Size(70, 70);
-            Pb1raFila.TabIndex = 42;
-            Pb1raFila.TabStop = false;
-            Pb1raFila.Click += Pb1raFila_Click;
+            PbPeriferico8.BackColor = Color.White;
+            PbPeriferico8.Image = (Image)resources.GetObject("PbPeriferico8.Image");
+            PbPeriferico8.Location = new Point(1038, 247);
+            PbPeriferico8.Name = "PbPeriferico8";
+            PbPeriferico8.Size = new Size(70, 70);
+            PbPeriferico8.TabIndex = 42;
+            PbPeriferico8.TabStop = false;
+            PbPeriferico8.Click += Pb1raFila_Click;
             // 
-            // Pb2daFila
+            // PbPeriferico9
             // 
-            Pb2daFila.BackColor = Color.White;
-            Pb2daFila.Image = (Image)resources.GetObject("Pb2daFila.Image");
-            Pb2daFila.Location = new Point(1038, 171);
-            Pb2daFila.Name = "Pb2daFila";
-            Pb2daFila.Size = new Size(70, 70);
-            Pb2daFila.TabIndex = 43;
-            Pb2daFila.TabStop = false;
-            Pb2daFila.Click += Pb2daFila_Click;
+            PbPeriferico9.BackColor = Color.White;
+            PbPeriferico9.Image = (Image)resources.GetObject("PbPeriferico9.Image");
+            PbPeriferico9.Location = new Point(1038, 171);
+            PbPeriferico9.Name = "PbPeriferico9";
+            PbPeriferico9.Size = new Size(70, 70);
+            PbPeriferico9.TabIndex = 43;
+            PbPeriferico9.TabStop = false;
+            PbPeriferico9.Click += Pb2daFila_Click;
             // 
-            // Pb3Docena
+            // PbPeriferico3
             // 
-            Pb3Docena.BackColor = Color.White;
-            Pb3Docena.Image = (Image)resources.GetObject("Pb3Docena.Image");
-            Pb3Docena.Location = new Point(240, 12);
-            Pb3Docena.Name = "Pb3Docena";
-            Pb3Docena.Size = new Size(70, 70);
-            Pb3Docena.TabIndex = 44;
-            Pb3Docena.TabStop = false;
-            Pb3Docena.Click += Pb3Docena_Click;
+            PbPeriferico3.BackColor = Color.White;
+            PbPeriferico3.Image = (Image)resources.GetObject("PbPeriferico3.Image");
+            PbPeriferico3.Location = new Point(240, 12);
+            PbPeriferico3.Name = "PbPeriferico3";
+            PbPeriferico3.Size = new Size(70, 70);
+            PbPeriferico3.TabIndex = 44;
+            PbPeriferico3.TabStop = false;
+            PbPeriferico3.Click += Pb3Docena_Click;
             // 
-            // Pb2Docena
+            // PbPeriferico2
             // 
-            Pb2Docena.BackColor = Color.White;
-            Pb2Docena.Image = (Image)resources.GetObject("Pb2Docena.Image");
-            Pb2Docena.Location = new Point(164, 12);
-            Pb2Docena.Name = "Pb2Docena";
-            Pb2Docena.Size = new Size(70, 70);
-            Pb2Docena.TabIndex = 45;
-            Pb2Docena.TabStop = false;
-            Pb2Docena.Click += Pb2Docena_Click;
+            PbPeriferico2.BackColor = Color.White;
+            PbPeriferico2.Image = (Image)resources.GetObject("PbPeriferico2.Image");
+            PbPeriferico2.Location = new Point(164, 12);
+            PbPeriferico2.Name = "PbPeriferico2";
+            PbPeriferico2.Size = new Size(70, 70);
+            PbPeriferico2.TabIndex = 45;
+            PbPeriferico2.TabStop = false;
+            PbPeriferico2.Click += Pb2Docena_Click;
             // 
-            // Pb1Docena
+            // PbPeriferico1
             // 
-            Pb1Docena.BackColor = Color.White;
-            Pb1Docena.Image = (Image)resources.GetObject("Pb1Docena.Image");
-            Pb1Docena.Location = new Point(88, 12);
-            Pb1Docena.Name = "Pb1Docena";
-            Pb1Docena.Size = new Size(70, 70);
-            Pb1Docena.TabIndex = 46;
-            Pb1Docena.TabStop = false;
-            Pb1Docena.Click += Pb1Docena_Click;
+            PbPeriferico1.BackColor = Color.White;
+            PbPeriferico1.Image = (Image)resources.GetObject("PbPeriferico1.Image");
+            PbPeriferico1.Location = new Point(88, 12);
+            PbPeriferico1.Name = "PbPeriferico1";
+            PbPeriferico1.Size = new Size(70, 70);
+            PbPeriferico1.TabIndex = 46;
+            PbPeriferico1.TabStop = false;
+            PbPeriferico1.Click += Pb1Docena_Click;
             // 
             // PbFicha3
             // 
@@ -709,17 +708,6 @@
             lblTiempo.TabIndex = 51;
             lblTiempo.Text = "15";
             // 
-            // lblMensaje
-            // 
-            lblMensaje.AutoSize = true;
-            lblMensaje.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMensaje.ForeColor = Color.White;
-            lblMensaje.Location = new Point(140, 346);
-            lblMensaje.Name = "lblMensaje";
-            lblMensaje.Size = new Size(182, 25);
-            lblMensaje.TabIndex = 54;
-            lblMensaje.Text = "hagan sus apuestas";
-            // 
             // LblValorFicha
             // 
             LblValorFicha.AutoSize = true;
@@ -736,11 +724,11 @@
             LblCreditoDisponibles.AutoSize = true;
             LblCreditoDisponibles.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             LblCreditoDisponibles.ForeColor = Color.White;
-            LblCreditoDisponibles.Location = new Point(184, 396);
+            LblCreditoDisponibles.Location = new Point(130, 368);
             LblCreditoDisponibles.Name = "LblCreditoDisponibles";
-            LblCreditoDisponibles.Size = new Size(178, 25);
+            LblCreditoDisponibles.Size = new Size(189, 25);
             LblCreditoDisponibles.TabIndex = 56;
-            LblCreditoDisponibles.Text = "tienes 400 creditos";
+            LblCreditoDisponibles.Text = "tienes 4000 creditos";
             // 
             // FrmRuleta
             // 
@@ -750,20 +738,19 @@
             ClientSize = new Size(1125, 537);
             Controls.Add(LblCreditoDisponibles);
             Controls.Add(LblValorFicha);
-            Controls.Add(lblMensaje);
             Controls.Add(lblTiempo);
             Controls.Add(PbFicha4);
             Controls.Add(PbFicha1);
             Controls.Add(PbFicha2);
             Controls.Add(PbFicha3);
-            Controls.Add(Pb1Docena);
-            Controls.Add(Pb2Docena);
-            Controls.Add(Pb3Docena);
-            Controls.Add(Pb2daFila);
-            Controls.Add(Pb1raFila);
-            Controls.Add(PbImpares);
-            Controls.Add(PbNegro);
-            Controls.Add(PbPares);
+            Controls.Add(PbPeriferico1);
+            Controls.Add(PbPeriferico2);
+            Controls.Add(PbPeriferico3);
+            Controls.Add(PbPeriferico9);
+            Controls.Add(PbPeriferico8);
+            Controls.Add(PbPeriferico6);
+            Controls.Add(PbPeriferico4);
+            Controls.Add(PbPeriferico7);
             Controls.Add(Pb31);
             Controls.Add(Pb34);
             Controls.Add(Pb20);
@@ -774,7 +761,7 @@
             Controls.Add(Pb13);
             Controls.Add(Pb10);
             Controls.Add(Pb0);
-            Controls.Add(PbRojo);
+            Controls.Add(PbPeriferico5);
             Controls.Add(pb21);
             Controls.Add(Pb15);
             Controls.Add(Pb18);
@@ -792,7 +779,7 @@
             Controls.Add(Pb30);
             Controls.Add(Pb33);
             Controls.Add(Pb36);
-            Controls.Add(Pb3Fila);
+            Controls.Add(PbPeriferico10);
             Controls.Add(Pb1);
             Controls.Add(Pb9);
             Controls.Add(Pb4);
@@ -817,7 +804,7 @@
             ((System.ComponentModel.ISupportInitialize)Pb4).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb9).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb3Fila).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico10).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb36).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb33).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb30).EndInit();
@@ -835,7 +822,7 @@
             ((System.ComponentModel.ISupportInitialize)Pb18).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb15).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb21).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbRojo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico5).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb0).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb10).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb13).EndInit();
@@ -846,14 +833,14 @@
             ((System.ComponentModel.ISupportInitialize)Pb20).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb34).EndInit();
             ((System.ComponentModel.ISupportInitialize)Pb31).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbPares).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbNegro).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PbImpares).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb1raFila).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb2daFila).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb3Docena).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb2Docena).EndInit();
-            ((System.ComponentModel.ISupportInitialize)Pb1Docena).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PbPeriferico1).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFicha3).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFicha2).EndInit();
             ((System.ComponentModel.ISupportInitialize)PbFicha1).EndInit();
@@ -874,7 +861,7 @@
         private PictureBox Pb4;
         private PictureBox Pb9;
         private PictureBox Pb1;
-        private PictureBox Pb3Fila;
+        private PictureBox PbPeriferico10;
         private PictureBox Pb36;
         private PictureBox Pb33;
         private PictureBox Pb30;
@@ -892,7 +879,7 @@
         private PictureBox Pb18;
         private PictureBox Pb15;
         private PictureBox pb21;
-        private PictureBox PbRojo;
+        private PictureBox PbPeriferico5;
         private PictureBox Pb0;
         private PictureBox Pb10;
         private PictureBox Pb13;
@@ -903,20 +890,19 @@
         private PictureBox Pb20;
         private PictureBox Pb34;
         private PictureBox Pb31;
-        private PictureBox PbPares;
-        private PictureBox PbNegro;
-        private PictureBox PbImpares;
-        private PictureBox Pb1raFila;
-        private PictureBox Pb2daFila;
-        private PictureBox Pb3Docena;
-        private PictureBox Pb2Docena;
-        private PictureBox Pb1Docena;
+        private PictureBox PbPeriferico7;
+        private PictureBox PbPeriferico4;
+        private PictureBox PbPeriferico6;
+        private PictureBox PbPeriferico8;
+        private PictureBox PbPeriferico9;
+        private PictureBox PbPeriferico3;
+        private PictureBox PbPeriferico2;
+        private PictureBox PbPeriferico1;
         private PictureBox PbFicha3;
         private PictureBox PbFicha2;
         private PictureBox PbFicha1;
         private PictureBox PbFicha4;
         private Label lblTiempo;
-        private Label lblMensaje;
         private Label LblValorFicha;
         private Label LblCreditoDisponibles;
     }
