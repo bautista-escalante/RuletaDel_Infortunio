@@ -1,0 +1,11 @@
+C:\Users\B4U71S74\Desktop\RuletaDel_Infortunio.exe
+C:\Users\B4U71S74\Desktop\RuletaDel_Infortunio.dll
+C:\Users\B4U71S74\Desktop\RuletaDel_Infortunio.deps.json
+C:\Users\B4U71S74\Desktop\RuletaDel_Infortunio.runtimeconfig.json
+C:\Users\B4U71S74\Desktop\RuletaDel_Infortunio.pdb
+C:\Users\B4U71S74\Desktop\Microsoft.Windows.SDK.NET.dll
+C:\Users\B4U71S74\Desktop\WinRT.Runtime.dll
+C:\Users\B4U71S74\Desktop\exepciones.dll
+C:\Users\B4U71S74\Desktop\objetos.dll
+C:\Users\B4U71S74\Desktop\exepciones.pdb
+C:\Users\B4U71S74\Desktop\objetos.pdb

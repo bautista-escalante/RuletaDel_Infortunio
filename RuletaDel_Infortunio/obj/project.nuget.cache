@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hsVtIx46OFSWEKljYR6rHnRzNswRD7p4cj6Crmt96aTEHBMBy9ic5fBip9UcEowjn/sFqQQM+N7klTG957DLIQ==",
+  "dgSpecHash": "5FGEZGWZyCjOcb7QN0Uwdwx67PoTmUCATxqXC4/Rj0H3v1RcqbRrnoszDFUIjoORipKNuSOdOYmLDMmWY4GjIg==",
   "success": true,
   "projectFilePath": "C:\\RuletaDel_Infortunio\\RuletaDel_Infortunio\\RuletaDel_Infortunio.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\B4U71S74\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.22621.31\\microsoft.windows.sdk.net.ref.10.0.22621.31.nupkg.sha512"
+  ],
   "logs": []
 }
